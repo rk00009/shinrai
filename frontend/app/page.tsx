@@ -40,11 +40,6 @@ export default function Home() {
               <p className="text-text-secondary">Create a new account</p>
             </Link>
           </div>
-
-          <div className="mt-12 text-text-secondary">
-            <p className="mb-4">Frontend Base Setup Complete ✓</p>
-            <p className="text-sm">Next.js • Tailwind • Framer Motion • ShadCN UI</p>
-          </div>
         </div>
       </div>
     </main>
