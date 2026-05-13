@@ -1,0 +1,6 @@
+{
+  "/operational-dashboard/page": "app/operational-dashboard/page.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/assigned-tasks/page": "app/assigned-tasks/page.js"
+}

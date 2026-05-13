@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinrai - University Civic Issue Resolution Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">◆</div>
+                <span class="logo-text">Shinrai</span>
+            </div>
+            <p class="sidebar-tagline">Civic Issue Resolution</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <p class="nav-section-title">Platform</p>
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active" data-icon="📊">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" data-icon="📋">Issues</a></li>
+                    <li><a href="#" class="nav-link" data-icon="👥">Departments</a></li>
+                    <li><a href="#" class="nav-link" data-icon="📈">Analytics</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <p class="nav-section-title">Management</p>
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link" data-icon="⚙️">Settings</a></li>
+                    <li><a href="#" class="nav-link" data-icon="🔐">Permissions</a></li>
+                    <li><a href="#" class="nav-link" data-icon="📊">Reports</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">AS</div>
+                <div class="user-info">
+                    <p class="user-name">Admin Staff</p>
+                    <p class="user-role">Administrator</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <h1 class="page-title">Dashboard</h1>
+                <p class="page-subtitle">Campus Issue Tracking & Resolution</p>
+            </div>
+            <div class="header-right">
+                <button class="btn-secondary" id="filterBtn">
+                    <span>Filters</span>
+                    <span class="badge">3</span>
+                </button>
+                <button class="btn-primary" id="reportBtn">+ New Report</button>
+            </div>
+        </header>
+
+        <!-- KPI Cards Section -->
+        <section class="kpi-section">
+            <div class="kpi-card kpi-card-1">
+                <div class="kpi-header">
+                    <p class="kpi-label">Active Issues</p>
+                    <span class="kpi-icon">📍</span>
+                </div>
+                <div class="kpi-content">
+                    <div class="kpi-value" data-target="247">0</div>
+                    <p class="kpi-change negative">↓ 12 this week</p>
+                </div>
+                <div class="kpi-meta">Monitored across campus</div>
+            </div>
+
+            <div class="kpi-card kpi-card-2">
+                <div class="kpi-header">
+                    <p class="kpi-label">Resolution Rate</p>
+                    <span class="kpi-icon">✓</span>
+                </div>
+                <div class="kpi-content">
+                    <div class="kpi-value" data-target="87">0</div>
+                    <p class="kpi-change positive">↑ 4% vs last month</p>
+                </div>
+                <div class="kpi-meta">Efficiency improvement</div>
+            </div>
+
+            <div class="kpi-card kpi-card-3">
+                <div class="kpi-header">
+                    <p class="kpi-label">Avg. Resolution Time</p>
+                    <span class="kpi-icon">⏱️</span>
+                </div>
+                <div class="kpi-content">
+                    <div class="kpi-value-time" data-target-days="8">0</div>
+                    <p class="kpi-change positive">↑ 2 days faster</p>
+                </div>
+                <div class="kpi-meta">Campus-wide average</div>
+            </div>
+
+            <div class="kpi-card kpi-card-4">
+                <div class="kpi-header">
+                    <p class="kpi-label">Stakeholder Satisfaction</p>
+                    <span class="kpi-icon">⭐</span>
+                </div>
+                <div class="kpi-content">
+                    <div class="kpi-value" data-target="92">0</div>
+                    <p class="kpi-change positive">↑ 5% satisfaction gain</p>
+                </div>
+                <div class="kpi-meta">Based on feedback surveys</div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="content-left">
+                <!-- Issues Table Section -->
+                <section class="card">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Recent Issues</h2>
+                            <p class="card-subtitle">Latest submissions requiring attention</p>
+                        </div>
+                        <a href="#" class="link-secondary">View all →</a>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="issues-table">
+                            <thead>
+                                <tr>
+                                    <th>Issue ID</th>
+                                    <th>Title</th>
+                                    <th>Department</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                    <th>Assigned</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-row">
+                                    <td class="table-id">#2847</td>
+                                    <td class="table-title">Damaged stairwell lighting in building C</td>
+                                    <td class="table-dept">Facilities</td>
+                                    <td><span class="status-badge status-in-progress">In Progress</span></td>
+                                    <td><span class="priority-badge priority-high">High</span></td>
+                                    <td class="table-assignee">
+                                        <div class="avatar-small">JM</div>
+                                    </td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="table-id">#2846</td>
+                                    <td class="table-title">Campus WiFi connectivity issues in library</td>
+                                    <td class="table-dept">IT Services</td>
+                                    <td><span class="status-badge status-in-progress">In Progress</span></td>
+                                    <td><span class="priority-badge priority-high">High</span></td>
+                                    <td class="table-assignee">
+                                        <div class="avatar-small">RK</div>
+                                    </td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="table-id">#2845</td>
+                                    <td class="table-title">Overflow parking lot inadequate markings</td>
+                                    <td class="table-dept">Parking Services</td>
+                                    <td><span class="status-badge status-under-review">Under Review</span></td>
+                                    <td><span class="priority-badge priority-medium">Medium</span></td>
+                                    <td class="table-assignee">
+                                        <div class="avatar-small">LS</div>
+                                    </td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="table-id">#2844</td>
+                                    <td class="table-title">Cafeteria equipment maintenance needed</td>
+                                    <td class="table-dept">Food Services</td>
+                                    <td><span class="status-badge status-scheduled">Scheduled</span></td>
+                                    <td><span class="priority-badge priority-medium">Medium</span></td>
+                                    <td class="table-assignee">
+                                        <div class="avatar-small">MN</div>
+                                    </td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td class="table-id">#2843</td>
+                                    <td class="table-title">Improved accessibility signage required</td>
+                                    <td class="table-dept">Facilities</td>
+                                    <td><span class="status-badge status-resolved">Resolved</span></td>
+                                    <td><span class="priority-badge priority-low">Low</span></td>
+                                    <td class="table-assignee">
+                                        <div class="avatar-small">EP</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Status Overview Section -->
+                <section class="card">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Status Distribution</h2>
+                            <p class="card-subtitle">Current breakdown by resolution status</p>
+                        </div>
+                    </div>
+
+                    <div class="status-grid">
+                        <div class="status-item">
+                            <div class="status-bar">
+                                <div class="status-bar-fill" style="width: 35%; background: linear-gradient(90deg, #C7372C, #710D0B);"></div>
+                            </div>
+                            <div class="status-info">
+                                <p class="status-name">In Progress</p>
+                                <p class="status-count">86 issues</p>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-bar">
+                                <div class="status-bar-fill" style="width: 28%; background: #94938F;"></div>
+                            </div>
+                            <div class="status-info">
+                                <p class="status-name">Under Review</p>
+                                <p class="status-count">69 issues</p>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-bar">
+                                <div class="status-bar-fill" style="width: 22%; background: #D6D7D2;"></div>
+                            </div>
+                            <div class="status-info">
+                                <p class="status-name">Scheduled</p>
+                                <p class="status-count">54 issues</p>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-bar">
+                                <div class="status-bar-fill" style="width: 15%; background: #4A4743;"></div>
+                            </div>
+                            <div class="status-info">
+                                <p class="status-name">Resolved</p>
+                                <p class="status-count">38 issues</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="content-right">
+                <!-- Department Performance -->
+                <section class="card">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Department Performance</h2>
+                            <p class="card-subtitle">Resolution efficiency metrics</p>
+                        </div>
+                    </div>
+
+                    <div class="department-list">
+                        <div class="dept-item">
+                            <div class="dept-info">
+                                <h3 class="dept-name">Facilities Management</h3>
+                                <p class="dept-meta">45 active issues</p>
+                            </div>
+                            <div class="dept-score">
+                                <span class="score-value">94%</span>
+                                <p class="score-label">efficiency</p>
+                            </div>
+                        </div>
+                        <div class="dept-item">
+                            <div class="dept-info">
+                                <h3 class="dept-name">IT Services</h3>
+                                <p class="dept-meta">28 active issues</p>
+                            </div>
+                            <div class="dept-score">
+                                <span class="score-value">87%</span>
+                                <p class="score-label">efficiency</p>
+                            </div>
+                        </div>
+                        <div class="dept-item">
+                            <div class="dept-info">
+                                <h3 class="dept-name">Student Affairs</h3>
+                                <p class="dept-meta">32 active issues</p>
+                            </div>
+                            <div class="dept-score">
+                                <span class="score-value">92%</span>
+                                <p class="score-label">efficiency</p>
+                            </div>
+                        </div>
+                        <div class="dept-item">
+                            <div class="dept-info">
+                                <h3 class="dept-name">Parking Services</h3>
+                                <p class="dept-meta">18 active issues</p>
+                            </div>
+                            <div class="dept-score">
+                                <span class="score-value">85%</span>
+                                <p class="score-label">efficiency</p>
+                            </div>
+                        </div>
+                        <div class="dept-item">
+                            <div class="dept-info">
+                                <h3 class="dept-name">Food Services</h3>
+                                <p class="dept-meta">12 active issues</p>
+                            </div>
+                            <div class="dept-score">
+                                <span class="score-value">89%</span>
+                                <p class="score-label">efficiency</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Priority Breakdown -->
+                <section class="card">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Priority Distribution</h2>
+                            <p class="card-subtitle">Issues by severity level</p>
+                        </div>
+                    </div>
+
+                    <div class="priority-breakdown">
+                        <div class="priority-item priority-item-high">
+                            <div class="priority-color"></div>
+                            <div class="priority-details">
+                                <p class="priority-label">Critical</p>
+                                <p class="priority-count">12 issues</p>
+                            </div>
+                            <p class="priority-percentage">5%</p>
+                        </div>
+                        <div class="priority-item priority-item-high">
+                            <div class="priority-color"></div>
+                            <div class="priority-details">
+                                <p class="priority-label">High</p>
+                                <p class="priority-count">78 issues</p>
+                            </div>
+                            <p class="priority-percentage">32%</p>
+                        </div>
+                        <div class="priority-item priority-item-medium">
+                            <div class="priority-color"></div>
+                            <div class="priority-details">
+                                <p class="priority-label">Medium</p>
+                                <p class="priority-count">104 issues</p>
+                            </div>
+                            <p class="priority-percentage">43%</p>
+                        </div>
+                        <div class="priority-item priority-item-low">
+                            <div class="priority-color"></div>
+                            <div class="priority-details">
+                                <p class="priority-label">Low</p>
+                                <p class="priority-count">45 issues</p>
+                            </div>
+                            <p class="priority-percentage">20%</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI Insights Widget (Glassmorphism) -->
+                <section class="card card-glass">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">AI Insights</h2>
+                            <p class="card-subtitle">Predictive analysis</p>
+                        </div>
+                    </div>
+
+                    <div class="ai-insights">
+                        <div class="insight-item">
+                            <div class="insight-icon">🔮</div>
+                            <p class="insight-text">Predicted resolution time for backlog: <strong>6 days</strong></p>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">📌</div>
+                            <p class="insight-text">Hot spot: Building C requires <strong>urgent attention</strong></p>
+                        </div>
+                        <div class="insight-item">
+                            <div class="insight-icon">👥</div>
+                            <p class="insight-text">Recommended: Allocate 2 more staff to <strong>Facilities</strong></p>
+                        </div>
+                    </div>
+
+                    <button class="btn-secondary btn-small">View AI Analysis →</button>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Overlay (Glassmorphism Example) -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal modal-glass">
+            <button class="modal-close" id="modalClose">✕</button>
+            <h2 class="modal-title">Create New Report</h2>
+            <p class="modal-subtitle">Submit a new civic issue to the resolution system</p>
+
+            <form class="modal-form">
+                <div class="form-group">
+                    <label for="issueTitle">Issue Title</label>
+                    <input type="text" id="issueTitle" placeholder="Brief description of the issue" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" class="form-input">
+                        <option>Facilities Management</option>
+                        <option>IT Services</option>
+                        <option>Student Affairs</option>
+                        <option>Parking Services</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority Level</label>
+                    <div class="priority-select">
+                        <label class="radio-btn">
+                            <input type="radio" name="priority" value="low">
+                            <span>Low</span>
+                        </label>
+                        <label class="radio-btn">
+                            <input type="radio" name="priority" value="medium" checked>
+                            <span>Medium</span>
+                        </label>
+                        <label class="radio-btn">
+                            <input type="radio" name="priority" value="high">
+                            <span>High</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Detailed description of the issue..." class="form-textarea"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="modalCancel">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
