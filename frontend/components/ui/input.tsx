@@ -11,7 +11,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ error, errorMessage, label, helperText, className, ...props }, ref) => {
+  ({ error, errorMessage, label, helperText, className, style, ...props }, ref) => {
+    const mergedStyle = { caretColor: 'rgb(26,26,26)', ...style } as React.CSSProperties;
     return (
       <div className="w-full">
         {label && (
@@ -22,7 +23,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <input
           ref={ref}
           className={clsx(
-            'w-full px-4 py-2 rounded-lg border transition-colors duration-quick',
+            'w-full px-4 py-2 rounded-lg border transition-colors duration-quick text-text-primary',
             'focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500',
             error
               ? 'border-danger-500 bg-danger-50'
@@ -31,6 +32,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             'placeholder:text-neutral-400',
             className
           )}
+          style={mergedStyle}
           {...props}
         />
         {errorMessage && (
@@ -54,7 +56,8 @@ interface TextareaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ error, errorMessage, label, rows = 4, className, ...props }, ref) => {
+  ({ error, errorMessage, label, rows = 4, className, style, ...props }, ref) => {
+    const mergedStyle = { caretColor: 'rgb(26,26,26)', ...style } as React.CSSProperties;
     return (
       <div className="w-full">
         {label && (
@@ -66,7 +69,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           rows={rows}
           className={clsx(
-            'w-full px-4 py-2 rounded-lg border transition-colors duration-quick resize-none',
+            'w-full px-4 py-2 rounded-lg border transition-colors duration-quick resize-none text-text-primary',
             'focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500',
             error
               ? 'border-danger-500 bg-danger-50'
@@ -75,6 +78,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             'placeholder:text-neutral-400',
             className
           )}
+          style={mergedStyle}
           {...props}
         />
         {errorMessage && (
@@ -95,7 +99,8 @@ interface SelectProps extends InputHTMLAttributes<HTMLSelectElement> {
 }
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
-  ({ error, errorMessage, label, options, className, ...props }, ref) => {
+  ({ error, errorMessage, label, options, className, style, ...props }, ref) => {
+    const mergedStyle = { caretColor: 'rgb(26,26,26)', ...style } as React.CSSProperties;
     return (
       <div className="w-full">
         {label && (
@@ -106,7 +111,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         <select
           ref={ref}
           className={clsx(
-            'w-full px-4 py-2 rounded-lg border transition-colors duration-quick',
+            'w-full px-4 py-2 rounded-lg border transition-colors duration-quick text-text-primary',
             'focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500',
             error
               ? 'border-danger-500 bg-danger-50'
@@ -114,6 +119,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             'disabled:bg-neutral-100 disabled:text-neutral-500 disabled:cursor-not-allowed',
             className
           )}
+          style={mergedStyle}
           {...props}
         >
           {options.map((option) => (
