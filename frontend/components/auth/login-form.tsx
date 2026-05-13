@@ -74,7 +74,7 @@ export function LoginForm() {
                   key={role.id}
                   type="button"
                   onClick={() => setSelectedRole(role.id)}
-                  className={`p-3 rounded-lg border-2 transition-all text-left ${
+                  className={`p-3 rounded-lg border-2 transition-all text-left text-text-primary ${
                     selectedRole === role.id
                       ? 'border-primary-500 bg-primary-50'
                       : 'border-neutral-200 hover:border-neutral-300'
