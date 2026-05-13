@@ -4,7 +4,7 @@ import { HTMLAttributes, forwardRef } from 'react';
 import clsx from 'clsx';
 
 interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  variant?: 'default' | 'success' | 'warning' | 'danger' | 'info' | 'primary';
+  variant?: 'default' | 'success' | 'warning' | 'danger' | 'info' | 'primary' | 'outline';
   size?: 'sm' | 'md';
 }
 
@@ -15,6 +15,7 @@ const variantStyles = {
   danger: 'bg-danger-100 text-danger-700',
   info: 'bg-info-100 text-info-700',
   primary: 'bg-primary-100 text-primary-700',
+  outline: 'bg-transparent border border-neutral-300 text-text-primary',
 };
 
 const sizeStyles = {
@@ -40,7 +41,17 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 Badge.displayName = 'Badge';
 
 interface StatusBadgeProps extends BadgeProps {
-  status: 'submitted' | 'verified' | 'assigned' | 'in-progress' | 'resolved' | 'closed' | 'escalated';
+  status:
+    | 'submitted'
+    | 'verified'
+    | 'assigned'
+    | 'pending'
+    | 'accepted'
+    | 'in-progress'
+    | 'resolved'
+    | 'completed'
+    | 'closed'
+    | 'escalated';
 }
 
 export const StatusBadge = forwardRef<HTMLSpanElement, StatusBadgeProps>(
@@ -48,9 +59,12 @@ export const StatusBadge = forwardRef<HTMLSpanElement, StatusBadgeProps>(
     const statusStyles = {
       submitted: 'bg-info-100 text-info-700',
       verified: 'bg-info-100 text-info-700',
+      pending: 'bg-warning-100 text-warning-700',
       assigned: 'bg-warning-100 text-warning-700',
+      accepted: 'bg-primary-100 text-primary-700',
       'in-progress': 'bg-warning-100 text-warning-700',
       resolved: 'bg-success-100 text-success-700',
+      completed: 'bg-success-100 text-success-700',
       closed: 'bg-neutral-200 text-text-primary',
       escalated: 'bg-danger-100 text-danger-700',
     };
@@ -58,9 +72,12 @@ export const StatusBadge = forwardRef<HTMLSpanElement, StatusBadgeProps>(
     const statusLabels = {
       submitted: 'Submitted',
       verified: 'Verified',
+      pending: 'Pending',
       assigned: 'Assigned',
+      accepted: 'Accepted',
       'in-progress': 'In Progress',
       resolved: 'Resolved',
+      completed: 'Completed',
       closed: 'Closed',
       escalated: 'Escalated',
     };

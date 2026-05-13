@@ -161,7 +161,7 @@ export function SignupForm() {
               value={formData.department}
               onChange={handleChange}
               disabled={isLoading}
-              required={formData.role !== 'student'}
+              required
             />
           )}
 

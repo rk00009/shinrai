@@ -1,7 +1,7 @@
 'use client';
 
 import { HTMLAttributes, forwardRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type HTMLMotionProps } from 'framer-motion';
 import { X } from 'lucide-react';
 import clsx from 'clsx';
 
@@ -73,10 +73,11 @@ export const Modal = ({ isOpen, onClose, title, description, size = 'md', childr
   );
 };
 
-interface AlertProps extends HTMLAttributes<HTMLDivElement> {
+interface AlertProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
   type?: 'success' | 'error' | 'warning' | 'info';
   title?: string;
   onClose?: () => void;
+  children?: React.ReactNode;
 }
 
 const alertStyles = {

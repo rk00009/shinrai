@@ -109,7 +109,6 @@ export default function AssignedTasksPage() {
 
                   <div className="flex gap-2 flex-wrap">
                     <Badge
-                      variant="outline"
                       className={
                         task.priority === 'critical'
                           ? 'border-danger-500 text-danger-500'
