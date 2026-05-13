@@ -111,7 +111,7 @@ export function LoginForm() {
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" className="w-4 h-4 rounded" />
-              <span>Remember me</span>
+              <span className="text-sm text-text-primary">Remember me</span>
             </label>
             <Link href="/forgot-password" className="text-primary-500 hover:text-primary-600">
               Forgot password?
